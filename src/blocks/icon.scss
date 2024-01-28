@@ -1,0 +1,82 @@
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s;
+
+  @include hover (transform, $scale-main);
+
+  @include onTablet {
+    width: 32px;
+    height: 32px;
+  }
+
+  &--phone {
+    background-image: url(images/icon-phone-2x.png);
+    text-decoration: none;
+
+  }
+
+  &--menu {
+    background-image: url(images/icon-menu-2x.png);
+
+    &:hover {
+      background-image: url(images/icon-menu-hover-2x.png);
+    }
+  }
+
+  &--closed {
+    background-image: url(images/icon-close-2x.png);
+  }
+
+  &__tooltip {
+    min-width: max-content;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 27px;
+    text-transform: uppercase;
+    display: block;
+    text-decoration: none;
+    color: $color-white;
+
+    &--hover {
+      text-align: right;
+      margin-bottom: 0;
+      padding-right: 16px;
+      position: absolute;
+      transform: translateX(-100%) translateY(-35%);
+
+      opacity: 0;
+      transition: opacity 0.3s;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &--margin {
+      margin-bottom: 8px;
+    }
+
+    &__margin-none {
+      margin-bottom: 0;
+    }
+
+    &__hover {
+      text-decoration: none;
+      box-sizing: content-box;
+      text-decoration-style: solid;
+      color: inherit;
+
+      opacity: 1;
+      transition: opacity 0.3s;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
